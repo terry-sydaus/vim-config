@@ -71,6 +71,13 @@ inoremap <c-u> <esc>gUiwea
 " Change the current word to upper case in normal mode and stay in normal mode
 " with cursor in same position with CTRL-u keys
 nnoremap <c-u> gUiw
+" CSS commenting shortcuts in Normal mode
+nnoremap <leader>cc I/* <Esc>A */<Esc>
+nnoremap <leader>cu :s/^\/\*\s*//e<CR>:s/\s*\*\/$//e<CR>:noh<CR>
+
+" CSS commenting shortcuts for Visual selection
+xnoremap <leader>cc <esc>`<i/* <esc>`>a */<esc>
+xnoremap <leader>cu :s/\%V\/\*\s*//e<CR>:s/\%V\s*\*\///e<CR>:noh<CR>
 " }}}
 " Abbreviation commands -------{{{
 " more useful commands for text that is typed frequently 
