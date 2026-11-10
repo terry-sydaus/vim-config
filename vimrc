@@ -71,10 +71,6 @@ inoremap <c-u> <esc>gUiwea
 " Change the current word to upper case in normal mode and stay in normal mode
 " with cursor in same position with CTRL-u keys
 nnoremap <c-u> gUiw
-" CSS commenting shortcuts in Normal mode
-nnoremap <leader>cc I/* <Esc>A */<Esc>
-nnoremap <leader>cu :s/^\/\*\s*//e<CR>:s/\s*\*\/$//e<CR>:noh<CR>
-
 " CSS commenting shortcuts for Visual selection
 xnoremap <leader>cc <esc>`<i/* <esc>`>a */<esc>
 xnoremap <leader>cu :s/\%V\/\*\s*//e<CR>:s/\%V\s*\*\///e<CR>:noh<CR>
@@ -118,9 +114,9 @@ augroup my_auto_commands_group
   " Add comments to .vim files using the specific commenting syntax that .vim
   " files requires
   autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
-  " Add comments to .css files using the specific commenting syntax that .css
-  " files requires
-  autocmd FileType css nnoremap <buffer> <localleader>c I/*<esc>A */<esc>
+  " CSS commenting shortcuts in Normal mode
+  autocmd FileType css nnoremap <buffer> <localleader>cc I/*<esc>A */<esc>
+  autocmd Filetype css nnoremap <buffer> <localleader>cu :s/^\/\*\s*//e<CR>:s/\s*\*\/$//e<CR>:noh<CR>
   " Fold html tag easily - use za to unfold all folds
   autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
 augroup END
