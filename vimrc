@@ -1,3 +1,24 @@
+" ============================================================================
+" GLOBAL VIM / NEOVIM CONFIGURATION
+" ============================================================================
+" Tracked in Git: github.com/terry-sydaus/vim-config.git
+" Single source of truth shared across multiple machines via symlinks.
+"
+" Machine A (Standard Vim):
+"   Repo Path : ~/Dev/dotfiles/vimrc
+"   Symlinks  : ~/.vimrc -> ~/Dev/dotfiles/vimrc
+"               ~/.vim   -> ~/Dev/dotfiles/vim
+"
+" Machine B (Neovim / Dual Setup):
+"   Repo Path : ~/Dev-Projects/dotfiles/vimrc
+"   Symlinks  : ~/.vimrc              -> ~/Dev-Projects/dotfiles/vimrc
+"               ~/.config/nvim/init.vim -> ~/Dev-Projects/dotfiles/vimrc
+"               ~/.config/nvim/colors   -> ~/Dev-Projects/dotfiles/vim/colors
+"
+" Useful Mappings:
+"   <leader>ei : Opens this config file in a split window ($MYVIMRC)
+" ============================================================================
+
 " Vimscript file settings ------{{{
 augroup filetype_vim
   autocmd!
@@ -40,9 +61,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Start and end of line with keys that are more easily accessible
 nnoremap Y y$
-" Reload init.vim without exiting vim. $MYVIMRC is ~/.config/nvim/init.vim
+" Reload .vimrc or init.vim without exiting vim. $MYVIMRC is ~/.config/nvim/init.vim (Neovim) and ~/.vimrc (vi / vim)
 nnoremap <leader>r :source $MYVIMRC<CR>
-" Edit init.vim
+" Edit .vimrc (vi / vim) or init.vim (Neovim)
 nnoremap <leader>ei :split $MYVIMRC<CR>
 " Change the current word to upper case in insert mode and stay in insert mode
 " with cursor in same position with CTRL-u keys
